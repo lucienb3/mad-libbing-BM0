@@ -6,27 +6,28 @@ from tkmacosx import Button
 root = Tk()
 root.title("Enter Title Here")
 
-
 #Set size of window
-root.geometry("300x150")
+root.geometry("500x200")
+
+msgbox = Text(root, height = 5, width = 30)
 
 # Create buttons
 red_button = Button(root, text="Red", background='red')
 yellow_button = Button(root, text="Yellow", background='yellow')
 green_button = Button(root, text='Green', background='green')
+color_button = Button(root, text='Color of Light', background='white')
 
 #Add a label
-label = Label(root, text="CHANGE ME!")
+label = Label(root, text=" What color is the light")
 
-frame = Frame(root)
 
 # Place widgets in window (with pack function!)
-red_button.pack()
-yellow_button.pack()
-green_button.pack()
-label.pack()
-frame.pack()
-
+red_button.grid(row=0,column=0)
+yellow_button.grid(row=0,column=5)
+green_button.grid(row=0,column=10)
+label.grid(row=10,column=5)
+msgbox.grid(row=20,column=5)
+color_button.grid(row=20,column=0)
 
 # Start the GUI event loop
 root.mainloop()
